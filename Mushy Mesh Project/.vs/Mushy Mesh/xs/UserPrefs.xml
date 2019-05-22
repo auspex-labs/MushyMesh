@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{74CD5DC9-3206-43A0-AD8A-F3F5B4899A25}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Softbody.cs">
+    <Files>
+      <File FileName="Assets/Softbody.cs" Line="158" Column="22" />
+      <File FileName="Assets/Editor/SoftbodyEditor.cs" Line="17" Column="10" />
+      <File FileName="Assets/Roll.cs" Line="18" Column="83" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp-Editor PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

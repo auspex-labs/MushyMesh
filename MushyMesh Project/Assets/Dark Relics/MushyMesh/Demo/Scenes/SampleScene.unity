@@ -336,15 +336,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1919411111}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9875321a6cc3048d4b9735cd0e076e86, type: 3}
+  m_Script: {fileID: 11500000, guid: c5cc900738b424caa8e02f1cf09617a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layers: 15
-  stiffness: 2
+  quality: 4
+  stiffness: 1
+  bodyType: 0
+  material: {fileID: 0}
+  simulated: 1
+  useAutoMass: 0
   mass: 1
-  width: 0
-  height: 0
-  dynamicShape: 1
+  linearDrag: 0
+  angularDrag: 0.05
+  gravityScale: 1
+  collisionDetection: 0
+  sleepingMode: 0
+  interpolation: 0
 --- !u!212 &1919411113
 SpriteRenderer:
   m_ObjectHideFlags: 0

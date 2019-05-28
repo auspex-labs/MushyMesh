@@ -4,13 +4,15 @@ using UnityEngine;
 
 namespace MushyMesh {
 	public class Softbody2D : MonoBehaviour {
+	
+		#region VARIABLES
 		[System.Serializable]
 		private enum Quality { off, low, medium, high, ultra, };
 
 		[Header("Softbody Info")]
 		//Physics info
 		[Tooltip("Sample Resolution. Higher means more accurate softbody, but more intensive. Avoid using Ultra with a high volume of softbodies.")]
-		[SerializeField] private Quality quality;
+		[SerializeField] private Quality quality = Quality.high;
 		private int layers;
 		[Tooltip("Percent rigid. At values close to 1, can get bouncy. Values from 0.25-0.75 look the best.")]
 		[Range(0.1f, 1f)] [SerializeField] private float stiffness = 0.5f;
@@ -61,7 +63,10 @@ namespace MushyMesh {
 		Transform[,] points;
 		Material mat;
 		bool start;
+		#endregion
 
+
+		#region INITIALIZATION
 		private void Start () {
 			SetQuality();
 
@@ -139,6 +144,8 @@ namespace MushyMesh {
 				return;
 			}
 
+
+
 			width = sprite.texture.width / sprite.pixelsPerUnit;
 			height = sprite.texture.height / sprite.pixelsPerUnit;
 
@@ -167,9 +174,8 @@ namespace MushyMesh {
 
 					SpriteRenderer thisSr = child.AddComponent<SpriteRenderer>();
 
-					//SpringJoint2D connectionToParent = child.AddComponent<SpringJoint2D> ();
-					//connectionToParent.frequency = 0.1f;
-					//connectionToParent.connectedBody = rootRB;
+					Softbody2DChild softbody = child.AddComponent<Softbody2DChild>();
+					softbody.parent = this;
 
 					if (w > 0 && h > 0) {
 						SpringJoint2D diagonal = child.AddComponent<SpringJoint2D>();
@@ -228,8 +234,6 @@ namespace MushyMesh {
 
 			//Root object
 			rootRB.constraints = RigidbodyConstraints2D.FreezeRotation;
-			//CircleCollider2D rootCol = gameObject.AddComponent<CircleCollider2D> ();
-			//rootCol.radius = width * Mathf.Min (transform.localScale.x, transform.localScale.y) / (2 * layers);
 
 			SpringJoint2D u = gameObject.AddComponent<SpringJoint2D>();
 			SpringJoint2D d = gameObject.AddComponent<SpringJoint2D>();
@@ -287,7 +291,10 @@ namespace MushyMesh {
 
 			StartCoroutine(FragmentShader());
 		}
+		#endregion
 
+
+		#region RUNTIME
 		//TODO: Replace with GPU Compute Shader
 		IEnumerator FragmentShader () {
 			while (true) {
@@ -354,5 +361,36 @@ namespace MushyMesh {
 			//    }
 			//}
 		}
+		#endregion
+
+
+		#region COLLISION
+		//Collision Scripts (Each node will call a respective one of these when it collides. 
+		//Use these functions if you want to treat the softbody as one colliding object.)
+		/*************************************************************************/
+		public void OnTriggerExit2D (Collider2D collision) {
+
+		}
+
+		public void OnTriggerStay2D (Collider2D collision) {
+
+		}
+
+		public void OnTriggerEnter2D (Collider2D collision) {
+			
+		}
+
+		public void OnCollisionExit2D (Collision2D collision) {
+
+		}
+
+		public void OnCollisionStay2D (Collision2D collision) {
+
+		}
+
+		public void OnCollisionEnter2D (Collision2D collision) {
+
+		}
+		#endregion
 	}
 }

@@ -150,8 +150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5cc900738b424caa8e02f1cf09617a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quality: 2
-  stiffness: 0.51
+  quality: 3
+  stiffness: 0.79
   bodyType: 0
   material: {fileID: 0}
   simulated: 1
@@ -490,8 +490,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5cc900738b424caa8e02f1cf09617a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quality: 2
-  stiffness: 0.51
+  quality: 3
+  stiffness: 0.79
   bodyType: 0
   material: {fileID: 0}
   simulated: 1
@@ -701,8 +701,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5cc900738b424caa8e02f1cf09617a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quality: 2
-  stiffness: 0.51
+  quality: 3
+  stiffness: 0.79
   bodyType: 0
   material: {fileID: 0}
   simulated: 1
@@ -912,8 +912,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5cc900738b424caa8e02f1cf09617a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quality: 2
-  stiffness: 0.51
+  quality: 3
+  stiffness: 0.79
   bodyType: 0
   material: {fileID: 0}
   simulated: 1
@@ -1017,8 +1017,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5cc900738b424caa8e02f1cf09617a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quality: 2
-  stiffness: 0.51
+  quality: 3
+  stiffness: 0.79
   bodyType: 0
   material: {fileID: 0}
   simulated: 1

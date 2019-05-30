@@ -70,7 +70,12 @@ namespace MushyMesh {
 		private void Start () {
 			SetQuality();
 
-			if (layers == 0) return; //Don't create softbody if quality = off
+			//Don't create softbody if quality = off
+			if (layers == 0) {
+				Rigidbody2D rb = gameObject.AddComponent<Rigidbody2D>();
+				SetRigidbodyInfo(rb, false);
+				return;
+			}
 
 			if (null == GetComponent<Rigidbody2D>()) {
 				rootRB = gameObject.AddComponent<Rigidbody2D>();
@@ -107,7 +112,7 @@ namespace MushyMesh {
 			}
 		}
 
-		public void SetRigidbodyInfo (Rigidbody2D rb) {
+		public void SetRigidbodyInfo (Rigidbody2D rb, bool freezeRotation = true) {
 			rb.bodyType = bodyType;
 			rb.sharedMaterial = material;
 			rb.simulated = simulated;
@@ -119,7 +124,10 @@ namespace MushyMesh {
 			rb.collisionDetectionMode = collisionDetection;
 			rb.sleepMode = sleepingMode;
 			rb.interpolation = interpolation;
-			rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+			if (freezeRotation) {
+				rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+			}
 		}
 
 		public void GenerateSoftbody () {
